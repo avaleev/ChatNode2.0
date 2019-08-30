@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+  <head></head>
+  <body>
+    <div class="profile">
+      <div class="avatar-image" style="background-image: url(/external/images/{{user.avatar}})"></div>
+      <ul class="personal">
+        <li><strong>{{user.username}}</strong></li>
+        <li>{{user.email}}</li>
+        <li><span>Joined:</span> {{formatDate user.created}}</li>
+      </ul>
+      <hr/>
+      {{#isSame self.username user.username}}
+        <div class="settings">
+          <ul class="settings-menu">
+            <li data-target="security">Security</li>
+          </ul>
+        </div>
+      {{else}}
+        <div class="interact">
+          <a href="/personal/{{user.username}}">Message 'em</a>
+        </div>
+      {{/isSame}}
+    </div>
+  </body>
+</html>

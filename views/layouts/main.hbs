@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+  <head>
+    <title>{{title}}</title>
+    <script src="https://kit.fontawesome.com/fd8a8b19d3.js"></script>
+    <link rel="stylesheet" type="text/css" href="/css/normalize.css"/>
+    <link rel="stylesheet" type="text/css" href="/css/animations.css"/>
+    <link rel="stylesheet" type="text/css" href="/css/style.dark.css"/>
+  </head>
+  <body>
+    <div class="header">
+      <a href="/"><h3 class="title">ChatNode <i class="far fa-comments"></i> | <span style="font-size: 14px">NodeJS Express + MongoBD + Socket.IO</span></span></h3></a>
+      {{#if self}}
+        <div class="profile-menu">
+          <div class="avatar-image menu-trigger" style="background-image: url(/external/images/{{self.avatar}})"></div>
+          <ul class="profile-dropdown">
+            <a href="/user/self"><li><i class="fas fa-user"></i> Profile</li></a>
+            <a href="/user/exit"><li><i class="fas fa-door-open"></i> Exit</li></a>
+          </ul>
+        </div>
+      {{/if}}
+    </div>
+    <div class="main">
+        {{{body}}}
+    </div>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script type="text/javascript" src="/js/universal.js"></script>
+    {{#if script}}
+      <script type="text/javascript" src="/js/{{script}}.js"></script>
+    {{/if}}
+  </body>
+</html>

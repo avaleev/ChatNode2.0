@@ -1,0 +1,13 @@
+<!doctype html>
+<html>
+  <head></head>
+  <body>
+    {{#if rooms}}
+        {{#each rooms}}
+            <p><a href="{{this.link}}">{{this.title}}</a></p>
+        {{/each}}
+    {{else}}
+      <p>Sorry, you are not in any chat yet.</p>
+    {{/if}}
+  </body>
+</html>

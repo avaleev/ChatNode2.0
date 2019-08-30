@@ -1,0 +1,19 @@
+<div class="chatroom">
+    <div class="header">
+        <div class="avatar-image" style="background-image: url(/external/images/{{room.cover}})"></div>
+        <h3>{{room.title}}</h3>
+        <div class="chatroom-users">
+            {{#if room.users}}
+                {{#each room.users}}
+                    <div class="avatar-image" style="background-image: url(/external/images/{{this.avatar}})" title="{{this.username}}"></div>
+                {{/each}}
+            {{/if}}
+        </div>
+    </div>
+    <ul class="messages"></ul>
+    <div id="errorbox"></div>
+    <form id="chatnode">
+        <input id="message" autocomplete="off" placeholder="Start typing your thoughts here.." required />
+        <button><i class="fas fa-bolt"></i></button>
+    </form>
+</div>
