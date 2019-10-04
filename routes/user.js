@@ -8,7 +8,7 @@ const { User, validate } = require("../models/User");
 const auth = require("../middleware/auth");
 
 const jwt    = require("jsonwebtoken");
-const bcrypt = require("bcrypt");
+const bcrypt = require("bcrypt-nodejs");
 const crypto = require("crypto");
 const async  = require("async");
 
