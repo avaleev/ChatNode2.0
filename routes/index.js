@@ -11,6 +11,17 @@ const Chat    = require("../models/Chat");
 const Message = require("../models/Message");
 const User    = require("../models/User").User;
 
+router.get('/', (req, res) => {
+    if (req.session.token) {
+        res.redirect("/conversations");
+    } else {
+        res.render("signin", {
+            title: "CN.Sign_In",
+            script: "auther"
+        });
+    }
+});
+
 router.get("/conversations", auth, async (req, res) => {
     const self  = jwt.verify(req.session.token, config.get("encryptionstring"));
     
