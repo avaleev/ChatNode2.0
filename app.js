@@ -30,7 +30,7 @@ const mongoURI = "mongodb+srv://chatuser:chatpass@akumacloud-r2091.mongodb.net/C
 mongoose
     .connect(mongoURI, { useNewUrlParser: true, useCreateIndex: true })
     .then((data) => console.log("MongoDB connection established"))
-    .catch(err => console.error("Could not connect to MongoDB"));
+    .catch(err => console.error("Could not connect to MongoDB " + err));
 
 // view engine setup
 app.engine(".hbs", exphbs({
