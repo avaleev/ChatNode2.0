@@ -20,8 +20,7 @@ const http = require("http").Server(app);
 const io   = require("socket.io")(http);
 
 if (!config.get("encryptionstring") ||
-    !config.get("sessionkey") ||
-    !config.get("gmail")) {
+    !config.get("sessionkey")) {
         throw Error("FATAL ERROR! I've lost my keys, how am I gonna open this page now?")
         process.exit(1);
 }
